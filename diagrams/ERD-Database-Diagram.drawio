@@ -1,0 +1,250 @@
+<mxfile host="app.diagrams.net" modified="2026-05-23T04:06:00.000Z" agent="Claude" version="25.0.0" type="device">
+  <diagram name="ERD - Billiard Cafe System" id="erd-main">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ==================== USERS TABLE ==================== -->
+        <mxCell id="t_users" value="USERS&#xa;(Tài khoản người dùng)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#4472C4;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#2E75B6;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="220" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_users_cols" value="PK  id : INTEGER (AUTO)&#xa;    username : VARCHAR(100) UNIQUE&#xa;    password_hash : VARCHAR(255)&#xa;    role : VARCHAR(50) DEFAULT 'admin'&#xa;    created_at : DATETIME" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#D6DCE5;collapsible=0;strokeColor=#2E75B6;fontSize=10;" vertex="1" parent="t_users">
+          <mxGeometry y="40" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SETTINGS TABLE ==================== -->
+        <mxCell id="t_settings" value="SETTINGS&#xa;(Cấu hình hệ thống)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#70AD47;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#507E32;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_settings_cols" value="PK  key_name : VARCHAR(100)&#xa;    value : TEXT" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#E2EFDA;collapsible=0;strokeColor=#507E32;fontSize=10;" vertex="1" parent="t_settings">
+          <mxGeometry y="40" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== TABLES TABLE (Billiard) ==================== -->
+        <mxCell id="t_tables" value="TABLES&#xa;(Bàn Billiard)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#ED7D31;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#C65911;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="40" width="240" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_tables_cols" value="PK  id : INTEGER (AUTO)&#xa;    name : VARCHAR(100)&#xa;    status : VARCHAR(50) DEFAULT 'empty'&#xa;    rate_per_hour : REAL DEFAULT 50000&#xa;    current_session_start : TEXT&#xa;    reserved_phone : VARCHAR(20)&#xa;    reserved_name : VARCHAR(255)&#xa;FK  current_order_id : INTEGER&#xa;    drinks_total : REAL DEFAULT 0&#xa;    billiard_total : REAL DEFAULT 0" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#FCE4D6;collapsible=0;strokeColor=#C65911;fontSize=10;" vertex="1" parent="t_tables">
+          <mxGeometry y="40" width="240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== CATEGORIES TABLE ==================== -->
+        <mxCell id="t_categories" value="CATEGORIES&#xa;(Phân loại sản phẩm)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#7030A0;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#5B1D76;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_categories_cols" value="PK  id : INTEGER (AUTO)&#xa;    name : VARCHAR(100)" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#E4DFEC;collapsible=0;strokeColor=#5B1D76;fontSize=10;" vertex="1" parent="t_categories">
+          <mxGeometry y="40" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== PRODUCTS TABLE ==================== -->
+        <mxCell id="t_products" value="PRODUCTS&#xa;(Sản phẩm / Menu)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#7030A0;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#5B1D76;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="280" y="180" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_products_cols" value="PK  id : INTEGER (AUTO)&#xa;FK  category_id : INTEGER&#xa;    name : VARCHAR(255)&#xa;    price : REAL&#xa;    stock : REAL DEFAULT 0&#xa;    unit : VARCHAR(50) DEFAULT 'pcs'&#xa;    image_url : TEXT&#xa;    cost_price : REAL DEFAULT 0" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#E4DFEC;collapsible=0;strokeColor=#5B1D76;fontSize=10;" vertex="1" parent="t_products">
+          <mxGeometry y="40" width="220" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== CUSTOMERS TABLE ==================== -->
+        <mxCell id="t_customers" value="CUSTOMERS&#xa;(Khách hàng)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#00B0F0;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#0070C0;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="260" width="240" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_customers_cols" value="PK  id : INTEGER (AUTO)&#xa;    name : TEXT&#xa;    phone : TEXT&#xa;    points : INTEGER DEFAULT 0&#xa;    tier : TEXT DEFAULT 'Bronze'&#xa;    total_spent : REAL DEFAULT 0&#xa;    visit_count : INTEGER DEFAULT 0" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#DDEBF7;collapsible=0;strokeColor=#0070C0;fontSize=10;" vertex="1" parent="t_customers">
+          <mxGeometry y="40" width="240" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== VOUCHERS TABLE ==================== -->
+        <mxCell id="t_vouchers" value="VOUCHERS&#xa;(Mã giảm giá)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#FFC000;fontColor=#000000;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#BF8F00;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="820" y="40" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_vouchers_cols" value="PK  id : INTEGER (AUTO)&#xa;    code : VARCHAR(50) UNIQUE&#xa;    type : VARCHAR(20)&#xa;    value : REAL&#xa;    expires_at : TEXT&#xa;    min_order : REAL DEFAULT 0&#xa;    max_uses : INTEGER&#xa;    used_count : INTEGER DEFAULT 0" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#FFF2CC;collapsible=0;strokeColor=#BF8F00;fontSize=10;" vertex="1" parent="t_vouchers">
+          <mxGeometry y="40" width="200" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== ORDERS TABLE ==================== -->
+        <mxCell id="t_orders" value="ORDERS&#xa;(Đơn hàng)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#C00000;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#8B0000;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="820" y="220" width="260" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_orders_cols" value="PK  id : INTEGER (AUTO)&#xa;FK  customer_id : INTEGER&#xa;    customer_name : TEXT&#xa;    customer_phone : TEXT&#xa;FK  table_id : INTEGER&#xa;    subtotal : REAL&#xa;    discount : REAL DEFAULT 0&#xa;    tier_discount : REAL DEFAULT 0&#xa;    voucher_discount : REAL DEFAULT 0&#xa;    tax : REAL DEFAULT 0&#xa;    total : REAL&#xa;    status : TEXT DEFAULT 'paid'&#xa;    created_at : TEXT" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#F4B084;collapsible=0;strokeColor=#8B0000;fontSize=10;" vertex="1" parent="t_orders">
+          <mxGeometry y="40" width="260" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== ORDER_ITEMS TABLE ==================== -->
+        <mxCell id="t_order_items" value="ORDER_ITEMS&#xa;(Chi tiết đơn hàng)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#C00000;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#8B0000;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="220" width="220" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_order_items_cols" value="PK  id : INTEGER (AUTO)&#xa;FK  order_id : INTEGER&#xa;FK  product_id : INTEGER&#xa;    description : TEXT&#xa;    quantity : REAL&#xa;    unit_price : REAL&#xa;    line_total : REAL" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#F4B084;collapsible=0;strokeColor=#8B0000;fontSize=10;" vertex="1" parent="t_order_items">
+          <mxGeometry y="40" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SUPPLIERS TABLE ==================== -->
+        <mxCell id="t_suppliers" value="SUPPLIERS&#xa;(Nhà cung cấp)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#00B050;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#375623;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="200" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_suppliers_cols" value="PK  id : INTEGER (AUTO)&#xa;    name : VARCHAR(255)&#xa;    phone : TEXT&#xa;    address : TEXT" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#C6EFCE;collapsible=0;strokeColor=#375623;fontSize=10;" vertex="1" parent="t_suppliers">
+          <mxGeometry y="40" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== PURCHASES TABLE ==================== -->
+        <mxCell id="t_purchases" value="PURCHASES&#xa;(Đơn nhập hàng)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#00B050;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#375623;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="280" y="370" width="220" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_purchases_cols" value="PK  id : INTEGER (AUTO)&#xa;FK  supplier_id : INTEGER&#xa;    total : REAL&#xa;    created_at : TEXT" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#C6EFCE;collapsible=0;strokeColor=#375623;fontSize=10;" vertex="1" parent="t_purchases">
+          <mxGeometry y="40" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== PURCHASE_ITEMS TABLE ==================== -->
+        <mxCell id="t_purchase_items" value="PURCHASE_ITEMS&#xa;(Chi tiết nhập hàng)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#00B050;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#375623;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="450" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_purchase_items_cols" value="PK  id : INTEGER (AUTO)&#xa;FK  purchase_id : INTEGER&#xa;FK  product_id : INTEGER&#xa;    quantity : REAL&#xa;    unit_cost : REAL&#xa;    line_total : REAL" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#C6EFCE;collapsible=0;strokeColor=#375623;fontSize=10;" vertex="1" parent="t_purchase_items">
+          <mxGeometry y="40" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SHIFTS TABLE ==================== -->
+        <mxCell id="t_shifts" value="SHIFTS&#xa;(Ca làm việc)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#9E480E;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#7A3500;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="820" y="460" width="200" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_shifts_cols" value="PK  id : INTEGER (AUTO)&#xa;    staff_name : VARCHAR(255)&#xa;    role : VARCHAR(50) DEFAULT 'staff'&#xa;    start_time : TEXT&#xa;    end_time : TEXT" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#F4B084;collapsible=0;strokeColor=#7A3500;fontSize=10;" vertex="1" parent="t_shifts">
+          <mxGeometry y="40" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== BOOKINGS TABLE ==================== -->
+        <mxCell id="t_bookings" value="BOOKINGS&#xa;(Đặt bàn)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#5B9BD5;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#2E75B6;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="40" width="200" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_bookings_cols" value="PK  id : INTEGER (AUTO)&#xa;    customer_name : TEXT&#xa;    phone : TEXT&#xa;FK  table_id : INTEGER&#xa;    start_time : TEXT&#xa;    end_time : TEXT&#xa;    status : TEXT DEFAULT 'booked'" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#DDEBF7;collapsible=0;strokeColor=#2E75B6;fontSize=10;" vertex="1" parent="t_bookings">
+          <mxGeometry y="40" width="200" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== NOTIFICATIONS TABLE ==================== -->
+        <mxCell id="t_notifications" value="NOTIFICATIONS&#xa;(Thông báo)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=#996633;fontColor=#ffffff;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#664400;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="820" y="600" width="220" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="t_notifications_cols" value="PK  id : INTEGER (AUTO)&#xa;    message : TEXT&#xa;    type : TEXT DEFAULT 'info'&#xa;    created_at : TEXT&#xa;    read : INTEGER DEFAULT 0" style="align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;fillColor=#E4DFEC;collapsible=0;strokeColor=#664400;fontSize=10;" vertex="1" parent="t_notifications">
+          <mxGeometry y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== RELATIONSHIPS ==================== -->
+
+        <!-- categories -> products (1:N) -->
+        <mxCell id="r_cat_prod" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7030A0;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_categories_cols" target="t_products_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_cat_prod_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#7030A0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="210" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- tables -> orders (1:N) via table_id -->
+        <mxCell id="r_tbl_ord" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#ED7D31;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_tables_cols" target="t_orders_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_tbl_ord_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#ED7D31;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="795" y="260" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- tables -> orders (current_order_id) (1:0..1) -->
+        <mxCell id="r_tbl_cur_ord" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#ED7D31;endArrow=classic;endFill=1;dashed=1;exitX=0;exitY=0.9;exitDx=0;exitDy=0;entryX=1;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_tables_cols" target="t_orders_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_tbl_cur_ord_label" value="1 : 0..1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#ED7D31;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="795" y="380" width="40" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- tables -> bookings (1:N) -->
+        <mxCell id="r_tbl_book" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#5B9BD5;endArrow=classic;endFill=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_tables_cols" target="t_bookings_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_tbl_book_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#5B9BD5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="795" y="195" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- customers -> orders (1:N) -->
+        <mxCell id="r_cust_ord" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00B0F0;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_customers_cols" target="t_orders_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_cust_ord_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#00B0F0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="795" y="310" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- orders -> order_items (1:N) -->
+        <mxCell id="r_ord_items" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#C00000;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_orders_cols" target="t_order_items_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_ord_items_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#C00000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="290" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- products -> order_items (1:N) -->
+        <mxCell id="r_prod_items" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7030A0;endArrow=classic;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_products_cols" target="t_order_items_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_prod_items_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#7030A0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="260" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- suppliers -> purchases (1:N) -->
+        <mxCell id="r_sup_pur" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00B050;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_suppliers_cols" target="t_purchases_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_sup_pur_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#00B050;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="420" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- purchases -> purchase_items (1:N) -->
+        <mxCell id="r_pur_items" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00B050;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_purchases_cols" target="t_purchase_items_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_pur_items_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#00B050;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="515" y="480" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- products -> purchase_items (1:N) -->
+        <mxCell id="r_prod_pur_items" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7030A0;endArrow=classic;endFill=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_products_cols" target="t_purchase_items_cols">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r_prod_pur_items_label" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#7030A0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="510" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== LEGEND ==================== -->
+        <mxCell id="legend" value="CHÚ THÍCH" style="swimlane;horizontal=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#455A64;strokeWidth=1;fontStyle=1;fontSize=12;startSize=25;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="280" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_pk" value="PK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#ffffff;fillColor=#4472C4;strokeColor=#2E75B6;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="35" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_pk_text" value="Primary Key" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="35" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_fk" value="FK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#ffffff;fillColor=#ED7D31;strokeColor=#C65911;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="65" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_fk_text" value="Foreign Key" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="65" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_1n" value="1 : N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#000000;fillColor=#D6DCE5;strokeColor=#2E75B6;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="95" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_1n_text" value="One-to-Many" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="95" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_10n" value="1 : 0..1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#000000;fillColor=#D6DCE5;strokeColor=#2E75B6;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="125" width="40" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_10n_text" value="One-to-ZeroOrOne" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="60" y="125" width="130" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== TITLE ==================== -->
+        <mxCell id="title" value="ENTITY RELATIONSHIP DIAGRAM&#xa;Hệ thống Quản lý Billiard Cafe" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1A237E;" vertex="1" parent="1">
+          <mxGeometry x="600" y="620" width="400" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="15 Bảng | SQLite | Node.js + Express.js" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="620" y="680" width="360" height="25" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

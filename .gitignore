@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contain secrets)
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Uploads
+uploads/
+backups/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test/Debug scripts
+*.ps1
+acorncheck*.js
+bisect.js
+braces.js
+bytecheck.js
+check*.js
+clean*.js
+comparewrap.js
+cuttest.js
+debugend.js
+deepinsp.js
+depthtrack.js
+diagnose.js
+espreach.js
+final-fix.js
+find*.js
+fix*.js
+hardfix.js
+load*.js
+normcrlf.js
+nullfix.js
+parsecheck.js
+recheck*.js
+repair.js
+reset-password.js
+striptrail*.js
+strategy.js
+trackbrace.js
+wrap*.js
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

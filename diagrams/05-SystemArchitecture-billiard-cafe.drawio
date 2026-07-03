@@ -1,0 +1,251 @@
+<mxfile host="app.diagrams.net" modified="2026-05-22T15:14:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="System Architecture" id="architecture-diagram">
+    <mxGraphModel dx="1500" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- CLIENT LAYER -->
+        <mxCell id="client_bg" value="CLIENT LAYER (Presentation Layer)" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="300" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- Web Browser -->
+        <mxCell id="browser" value="🌐 Web Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1565C0;strokeWidth=2;fontSize=12;" vertex="1" parent="client_bg">
+          <mxGeometry x="50" y="50" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- React SPA -->
+        <mxCell id="reactspa" value="React SPA&#xa;(Client-side Rendering)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CE93D8;strokeColor=#7B1FA2;strokeWidth=1;fontSize=10;" vertex="1" parent="client_bg">
+          <mxGeometry x="50" y="100" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Styles -->
+        <mxCell id="styles_client" value="Tailwind CSS&#xa;GSAP, Chart.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F57F17;strokeWidth=1;fontSize=10;" vertex="1" parent="client_bg">
+          <mxGeometry x="50" y="150" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- API LAYER -->
+        <mxCell id="api_bg" value="API LAYER (Application Layer)" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="320" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- Express.js -->
+        <mxCell id="express" value="Express.js Server" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#E65100;strokeWidth=2;fontSize=12;" vertex="1" parent="api_bg">
+          <mxGeometry x="60" y="50" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Routes -->
+        <mxCell id="routes" value="Routes (routes.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=1;fontSize=10;" vertex="1" parent="api_bg">
+          <mxGeometry x="60" y="100" width="90" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- API Routes -->
+        <mxCell id="apiroutes" value="API Routes&#xa;(server-api.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=1;fontSize=10;" vertex="1" parent="api_bg">
+          <mxGeometry x="160" y="100" width="90" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Middleware -->
+        <mxCell id="middleware" value="Middleware&#xa;Auth | Roles | CSRF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=1;fontSize=10;" vertex="1" parent="api_bg">
+          <mxGeometry x="60" y="150" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- DATABASE LAYER -->
+        <mxCell id="db_bg" value="DATABASE LAYER (Data Layer)" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="740" y="40" width="320" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- SQLite -->
+        <mxCell id="sqlite" value="SQLite&#xa;(better-sqlite3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;strokeWidth=2;fontSize=12;" vertex="1" parent="db_bg">
+          <mxGeometry x="60" y="50" width="90" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- SQL Server -->
+        <mxCell id="sqlserver" value="SQL Server&#xa;(mssql - Optional)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;strokeWidth=2;fontSize=12;" vertex="1" parent="db_bg">
+          <mxGeometry x="170" y="50" width="90" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- DB Modules -->
+        <mxCell id="dbmodules" value="db.js&#xa;db-sqlserver.js&#xa;db.config.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=1;fontSize=10;" vertex="1" parent="db_bg">
+          <mxGeometry x="60" y="110" width="200" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- CONNECTIONS -->
+        <mxCell id="conn1" value="HTTP/HTTPS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#1565C0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="130" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn1_arrow" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1" source="browser" target="express">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn2" value="Queries" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#7B1FA2;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="130" width="40" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn2_arrow" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#7B1FA2;strokeWidth=2;" edge="1" parent="1" source="express" target="sqlite">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- SECURITY LAYER -->
+        <mxCell id="security_bg" value="SECURITY &amp; AUTHENTICATION" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="1020" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Session Auth -->
+        <mxCell id="session_auth" value="Session Auth&#xa;(express-session)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;strokeWidth=1;fontSize=10;" vertex="1" parent="security_bg">
+          <mxGeometry x="50" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- JWT -->
+        <mxCell id="jwt" value="JWT&#xa;(jsonwebtoken)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;strokeWidth=1;fontSize=10;" vertex="1" parent="security_bg">
+          <mxGeometry x="190" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Bcrypt -->
+        <mxCell id="bcrypt" value="bcryptjs&#xa;(Password Hashing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;strokeWidth=1;fontSize=10;" vertex="1" parent="security_bg">
+          <mxGeometry x="330" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- CSRF -->
+        <mxCell id="csrf" value="CSRF&#xa;(csurf)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;strokeWidth=1;fontSize=10;" vertex="1" parent="security_bg">
+          <mxGeometry x="470" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Helmet -->
+        <mxCell id="helmet" value="Helmet&#xa;(Security Headers)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;strokeWidth=1;fontSize=10;" vertex="1" parent="security_bg">
+          <mxGeometry x="610" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Role-based -->
+        <mxCell id="role_based" value="Role-based Access&#xa;(admin/staff)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;strokeWidth=1;fontSize=10;" vertex="1" parent="security_bg">
+          <mxGeometry x="750" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- UTILITIES -->
+        <mxCell id="util_bg" value="UTILITIES &amp; HELPERS" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="1020" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util1" value="dayjs&#xa;(Date)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="50" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util2" value="multer&#xa;(File Upload)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="140" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util3" value="xlsx&#xa;(Excel)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="230" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util4" value="csv-writer&#xa;(CSV Export)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="320" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util5" value="uuid&#xa;(ID Gen)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="410" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util6" value="morgan&#xa;(HTTP Log)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="500" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util7" value="connect-flash&#xa;(Messages)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="590" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="util8" value="nodemon&#xa;(Dev)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;" vertex="1" parent="util_bg">
+          <mxGeometry x="680" y="35" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- SYSTEM COMPONENTS -->
+        <mxCell id="sys_bg" value="SYSTEM MODULES" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="1020" height="220" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 1: Quan ly ban -->
+        <mxCell id="mod1" value="Quản lý Bàn&#xa;Bật/Tắt bàn&#xa;Thêm đồ uống&#xa;Đặt bàn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#2E7D32;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="50" y="50" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 2: POS -->
+        <mxCell id="mod2" value="POS / Bán hàng&#xa;Chọn sản phẩm&#xa;Giỏ hàng&#xa;Thanh toán" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="200" y="50" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 3: Menu -->
+        <mxCell id="mod3" value="Quản lý Menu&#xa;CRUD Sản phẩm&#xa;Phân loại" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CE93D8;strokeColor=#7B1FA2;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="350" y="50" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 4: Khach hang -->
+        <mxCell id="mod4" value="Khách hàng&#xa;Thêm KH&#xa;Tích điểm&#xa;Phân hạng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#80DEEA;strokeColor=#00838F;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="500" y="50" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 5: Voucher -->
+        <mxCell id="mod5" value="Voucher&#xa;Tạo/Xóa&#xa;Áp dụng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFAB91;strokeColor=#BF360C;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="650" y="50" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 6: Ton kho -->
+        <mxCell id="mod6" value="Tồn kho&#xa;Xem tồn&#xa;Điều chỉnh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF59D;strokeColor=#F9A825;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="800" y="50" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 7: Nhap hang -->
+        <mxCell id="mod7" value="Nhập hàng&#xa;NCC&#xa;Đơn nhập" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BCAAA4;strokeColor=#5D4037;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="50" y="150" width="130" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 8: Nhan vien -->
+        <mxCell id="mod8" value="Nhân viên&#xa;Quản lý ca" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B39DDB;strokeColor=#512DA8;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="200" y="150" width="130" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 9: Dat ban -->
+        <mxCell id="mod9" value="Đặt bàn&#xa;Xác nhận/Hủy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#2E7D32;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="350" y="150" width="130" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 10: Bao cao -->
+        <mxCell id="mod10" value="Báo cáo&#xa;Doanh thu&#xa;Export CSV" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#E65100;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="500" y="150" width="130" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 11: Thong bao -->
+        <mxCell id="mod11" value="Thông báo&#xa;Tạo/Đọc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#1976D2;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="650" y="150" width="130" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Module 12: Cai dat -->
+        <mxCell id="mod12" value="Cài đặt&#xa;Config hệ thống&#xa;Tài khoản" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CFD8DC;strokeColor=#455A64;strokeWidth=1;fontSize=9;" vertex="1" parent="sys_bg">
+          <mxGeometry x="800" y="150" width="130" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="legend" value="LEGENDS" style="swimlane;horizontal=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;strokeWidth=1;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="400" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1565C0;strokeWidth=2;" vertex="1" parent="legend">
+          <mxGeometry x="20" y="30" width="30" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1_text" value="Client / Frontend" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="815" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#E65100;strokeWidth=2;" vertex="1" parent="legend">
+          <mxGeometry x="170" y="30" width="30" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2_text" value="Server / Backend" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="210" y="815" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;strokeWidth=2;" vertex="1" parent="legend">
+          <mxGeometry x="320" y="30" width="30" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3_text" value="Database" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="815" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

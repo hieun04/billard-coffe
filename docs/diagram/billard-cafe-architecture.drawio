@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Cursor">
+  <diagram id="architecture-billiard-cafe" name="System Architecture">
+    <mxGraphModel dx="1501" dy="955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=22;fontStyle=1;" value="Kiến trúc hệ thống - Billiard Cafe Management" vertex="1">
+          <mxGeometry height="30" width="500" x="560" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="user1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Quản trị viên" vertex="1">
+          <mxGeometry height="120" width="60" x="60" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="user2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Nhân viên" vertex="1">
+          <mxGeometry height="120" width="60" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="user3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Thu ngân" vertex="1">
+          <mxGeometry height="120" width="60" x="60" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=13;spacingTop=6;" value="&lt;b&gt;Frontend Web App&lt;/b&gt;&lt;br/&gt;React + Vite + Tailwind&lt;br/&gt;- Dashboard&lt;br/&gt;- Quản lý bàn&lt;br/&gt;- POS bán hàng&lt;br/&gt;- Thực đơn&lt;br/&gt;- Khách hàng&lt;br/&gt;- Đặt bàn&lt;br/&gt;- Nhân viên&lt;br/&gt;- Kho hàng, voucher, báo cáo, cài đặt" vertex="1">
+          <mxGeometry height="360" width="320" x="250" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="theme" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#60a5fa;fontSize=12;" value="Theme / Auth Context / API Client" vertex="1">
+          <mxGeometry height="60" width="240" x="290" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=13;spacingTop=6;" value="&lt;b&gt;REST API Server&lt;/b&gt;&lt;br/&gt;Node.js + Express&lt;br/&gt;- JWT Auth&lt;br/&gt;- Validation (Zod)&lt;br/&gt;- Rate Limit&lt;br/&gt;- Helmet + CORS&lt;br/&gt;- Business Logic" vertex="1">
+          <mxGeometry height="280" width="280" x="700" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="routes" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#4ade80;fontSize=12;" value="API Modules&#xa;auth / tables / orders / products / customers / bookings / staff / inventory / reports / vouchers / notifications / settings / ai" vertex="1">
+          <mxGeometry height="90" width="320" x="680" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=13;spacingTop=6;" value="&lt;b&gt;SQLite Database&lt;/b&gt;&lt;br/&gt;better-sqlite3&lt;br/&gt;app.db&lt;br/&gt;- users&lt;br/&gt;- tables&lt;br/&gt;- products, categories&lt;br/&gt;- orders, order_items&lt;br/&gt;- customers&lt;br/&gt;- bookings&lt;br/&gt;- suppliers, purchases, purchase_items&lt;br/&gt;- staff_shifts&lt;br/&gt;- vouchers&lt;br/&gt;- notifications&lt;br/&gt;- settings" vertex="1">
+          <mxGeometry height="350" width="300" x="1150" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="backup" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#ef4444;fontSize=12;" value="JSON Backup Files" vertex="1">
+          <mxGeometry height="60" width="160" x="1070" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#9333ea;fontSize=12;" value="AI Insights / Chat&#xa;(API tích hợp trong server)" vertex="1">
+          <mxGeometry height="60" width="180" x="1030" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" edge="1" parent="1" source="user1" style="endArrow=classic;html=1;strokeColor=#64748b;" target="frontend" value="HTTPS / Browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" edge="1" parent="1" source="user2" style="endArrow=classic;html=1;strokeColor=#64748b;" target="frontend" value="HTTPS / Browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" edge="1" parent="1" source="user3" style="endArrow=classic;html=1;strokeColor=#64748b;" target="frontend" value="HTTPS / Browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" edge="1" parent="1" source="frontend" style="endArrow=classic;html=1;strokeColor=#2563eb;" target="api" value="HTTP JSON API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" edge="1" parent="1" source="api" style="endArrow=classic;html=1;strokeColor=#16a34a;" target="db" value="Direct query / transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" edge="1" parent="1" source="api" style="endArrow=classic;html=1;strokeColor=#ef4444;" target="backup" value="Backup / export">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" edge="1" parent="1" source="api" style="endArrow=classic;html=1;strokeColor=#9333ea;" target="ai" value="Insights / chat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,163 @@
+<mxfile host="app.diagrams.net" agent="Cursor">
+  <diagram id="usecase-billiard-cafe" name="Use Case and Flow">
+    <mxGraphModel dx="1334" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=22;fontStyle=1;" value="Use Case chính - Hệ thống quản lý Billiard Cafe" vertex="1">
+          <mxGeometry height="30" width="480" x="650" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Admin" vertex="1">
+          <mxGeometry height="130" width="70" x="50" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="staff" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Nhân viên" vertex="1">
+          <mxGeometry height="130" width="70" x="50" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="cashier" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Thu ngân" vertex="1">
+          <mxGeometry height="130" width="70" x="50" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="system" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#334155;fontSize=13;" value="Billiard Cafe Management System" vertex="1">
+          <mxGeometry height="700" width="1180" x="180" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" value="Đăng nhập" vertex="1">
+          <mxGeometry height="60" width="140" x="260" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" value="Quản lý bàn" vertex="1">
+          <mxGeometry height="60" width="160" x="470" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" value="Tạo đơn bán hàng" vertex="1">
+          <mxGeometry height="60" width="170" x="700" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" value="Thanh toán" vertex="1">
+          <mxGeometry height="60" width="150" x="950" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;" value="Quản lý thực đơn" vertex="1">
+          <mxGeometry height="60" width="170" x="1150" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" value="Quản lý khách hàng" vertex="1">
+          <mxGeometry height="60" width="170" x="260" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uc7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fde68a;strokeColor=#ca8a04;" value="Đặt bàn trước" vertex="1">
+          <mxGeometry height="60" width="150" x="500" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uc8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fae8ff;strokeColor=#c026d3;" value="Chấm công nhân viên" vertex="1">
+          <mxGeometry height="60" width="180" x="730" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uc9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bae6fd;strokeColor=#0369a1;" value="Quản lý nhập hàng" vertex="1">
+          <mxGeometry height="60" width="170" x="980" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uc10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ecfccb;strokeColor=#65a30d;" value="Quản lý voucher" vertex="1">
+          <mxGeometry height="60" width="150" x="1180" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uc11" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;" value="Xem báo cáo doanh thu" vertex="1">
+          <mxGeometry height="60" width="190" x="330" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uc12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#9333ea;" value="Quản lý tài khoản nhân viên" vertex="1">
+          <mxGeometry height="60" width="220" x="600" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uc13" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#475569;" value="Xem thông báo" vertex="1">
+          <mxGeometry height="60" width="150" x="920" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uc14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#ef4444;" value="Sao lưu dữ liệu" vertex="1">
+          <mxGeometry height="60" width="150" x="1140" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="flowTitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=18;fontStyle=1;" value="Luồng nghiệp vụ bán hàng và bàn chơi" vertex="1">
+          <mxGeometry height="30" width="320" x="250" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;" value="1. Chọn bàn / khu vực" vertex="1">
+          <mxGeometry height="60" width="150" x="280" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;" value="2. Chọn món từ thực đơn" vertex="1">
+          <mxGeometry height="60" width="160" x="470" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;" value="3. Gán khách hàng / voucher" vertex="1">
+          <mxGeometry height="60" width="170" x="670" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;" value="4. Tạo đơn hàng" vertex="1">
+          <mxGeometry height="60" width="150" x="870" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#94a3b8;" value="5. Thanh toán + cập nhật điểm" vertex="1">
+          <mxGeometry height="60" width="180" x="1060" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l6" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l7" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l8" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l9" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l10" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l11" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l12" edge="1" parent="1" source="admin" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l13" edge="1" parent="1" source="staff" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l14" edge="1" parent="1" source="staff" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l15" edge="1" parent="1" source="staff" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l16" edge="1" parent="1" source="staff" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l17" edge="1" parent="1" source="staff" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l18" edge="1" parent="1" source="cashier" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l19" edge="1" parent="1" source="cashier" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l20" edge="1" parent="1" source="cashier" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l21" edge="1" parent="1" source="cashier" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l22" edge="1" parent="1" source="cashier" style="endArrow=none;html=1;strokeColor=#64748b;" target="uc10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l23" edge="1" parent="1" source="f1" style="endArrow=classic;html=1;strokeColor=#334155;" target="f2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l24" edge="1" parent="1" source="f2" style="endArrow=classic;html=1;strokeColor=#334155;" target="f3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l25" edge="1" parent="1" source="f3" style="endArrow=classic;html=1;strokeColor=#334155;" target="f4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l26" edge="1" parent="1" source="f4" style="endArrow=classic;html=1;strokeColor=#334155;" target="f5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

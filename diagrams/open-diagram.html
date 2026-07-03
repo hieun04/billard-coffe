@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Case Diagram - Billiard Cafe</title>
+    <script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .header p {
+            opacity: 0.9;
+        }
+        .viewer {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            min-height: 700px;
+        }
+        .instructions {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .instructions h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .instructions ol {
+            padding-left: 25px;
+            color: #555;
+            line-height: 2;
+        }
+        .instructions code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            color: #e53935;
+        }
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>USE CASE DIAGRAM</h1>
+            <p>Hệ thống Quản lý Billiard Cafe</p>
+        </div>
+        
+        <div class="viewer">
+            <!-- Thay đổi src bên dưới thành đường dẫn file của bạn -->
+            <iframe src="02-UseCase-billiard-cafe.drawio" title="Use Case Diagram"></iframe>
+        </div>
+        
+        <div class="instructions">
+            <h3>Hướng dẫn mở file:</h3>
+            <ol>
+                <li>Đặt file HTML này cùng thư mục với file <code>.drawio</code></li>
+                <li>Mở file HTML này trong trình duyệt Chrome/Firefox/Edge</li>
+                <li>Nếu iframe không hiển thị, click nút bên dưới để mở draw.io</li>
+            </ol>
+            <a href="https://app.diagrams.net/" target="_blank" class="btn">
+                Mở trên diagrams.net
+            </a>
+            <a href="https://www.youtube.com/watch?v=6X3C4QE4g9s" target="_blank" class="btn" style="background: #e53935;">
+                Video hướng dẫn
+            </a>
+        </div>
+    </div>
+</body>
+</html>

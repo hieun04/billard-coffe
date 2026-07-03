@@ -1,0 +1,153 @@
+flowchart TB
+    %% ==================== TITLE ====================
+    Title["USE CASE DIAGRAM - HỆ THỐNG QUẢN LÝ BILLIARD CAFE TÍCH HỢP AI"]
+    style Title fill:#1565C0,stroke:#0D47A1,stroke-width:3,color:#FFFFFF,font-size:18px,font-weight:bold
+
+    %% ==================== GROUP 1: MEMBER/USER ====================
+    subgraph G1["1. USE CASE - MEMBER/USER"]
+        direction TB
+        subgraph G1A["🔐 Authentication"]
+            A1["Đăng ký"]
+            A2["Đăng nhập"]
+            A3["Sửa mật khẩu"]
+            A4["Đăng xuất"]
+        end
+        subgraph G1B["📊 Personal Productivity"]
+            B1["Xem dashboard cá nhân"]
+            B2["Quản lý tích cực<br/>(Đặt lịch)"]
+            B3["Nhắc lợi ích (giải trí)"]
+            B4["Nhận thông báo mời nhóm"]
+        end
+        subgraph G1C["📋 Task Management"]
+            C1["Xem danh sách task"]
+            C2["Tạo/chỉ sửa task"]
+            C3["Cập nhật trạng thái"]
+            C4["Đánh dấu task"]
+            C5["Đánh dấu kết thúc task"]
+        end
+        subgraph G1D["👥 Team Collaboration"]
+            D1["Xem thành viên"]
+            D2["Gửi tin nhắn"]
+            D3["Nhận thông báo"]
+        end
+        subgraph G1E["🤖 AI Assistant (Trợ lý AI)"]
+            E1["Chat với AI"]
+            E2["Xem thông tin thời tiết"]
+            E3["Hỏi AI tóm tắt nội dung"]
+            E4["Xem phim phim hay cuộc trò chuyện"]
+        end
+    end
+    MEMBER(["👤 Member/User"])
+
+    %% ==================== GROUP 2: LEADER/PROJECT MANAGER ====================
+    subgraph G2["2. USE CASE - LEADER / PROJECT MANAGER"]
+        direction TB
+        subgraph G2A["📁 Project Management"]
+            F1["Tạo dự án"]
+            F2["Chỉnh sửa dự án"]
+            F3["Sao dự án"]
+            F4["Xem thành viên dự án<br/>(Tóm Nam theo nhóm)"]
+        end
+        subgraph G2B["⚙️ Team Management"]
+            G1B1["Mời thành viên"]
+            G1B2["Bổ nhiệm vào"]
+            G1B3["Phân quyền thành viên"]
+            G1B4["Xem workload thành viên"]
+        end
+        subgraph G2C["📋 Task Assignment"]
+            H1["Tạo task"]
+            H2["Giao đầu thị trị năng"]
+            H3["Điều chỉnh"]
+            H4["Theo dõi tiến độ task"]
+        end
+        subgraph G2D["📊 AI Analytics"]
+            I1["Xem phân tích workload"]
+            I2["Xem tình hình dự án"]
+            I3["Xem đề xuất phân chiếu lược"]
+        end
+        subgraph G2E["📄 Document Approval"]
+            J1["Phê duyệt tài liệu"]
+            J2["Từ chối tài liệu"]
+        end
+        subgraph G2F["💬 Workload Balancing"]
+            K1["Rà soát phân tải nhân viên"]
+            K2["Chuyển giao task"]
+        end
+        LEADER(["👤 Leader /<br/>Project Manager"])
+    end
+
+    %% ==================== GROUP 3: SYSTEM ADMIN ====================
+    subgraph G3["3. USE CASE - SYSTEM ADMIN"]
+        direction TB
+        subgraph G3A["👥 User Management"]
+            L1["Quản lý tài khoản"]
+            L2["Chặn tài khoản"]
+            L3["Khôi phục mật khẩu"]
+            L4["Reset mật khẩu"]
+        end
+        subgraph G3B["⚙️ System Configuration"]
+            M1["Cấu hình hệ thống"]
+            M2["Quản lý dung lượng"]
+            M3["Quản lý gói dữ liệu<br/>(Sử dụng tải)"]
+        end
+        subgraph G3C["🤖 AI Configuration"]
+            N1["Lấy lịch sử AI"]
+            N2["Thiết lập prompt"]
+            N3["Giới hạn token AI"]
+        end
+        subgraph G3D["🛡️ Security & Monitoring"]
+            O1["Xem activity logs"]
+            O2["Kiểm tra lỗi mật hệ thống"]
+            O3["Theo dõi lỗi bảng"]
+        end
+        ADMIN(["👤 System Admin"])
+    end
+
+    %% ==================== RELATIONSHIPS - MEMBER ====================
+    MEMBER --- A1 & A2 & A3 & A4
+    MEMBER --- B1 & B2 & B3 & B4
+    MEMBER --- C1 & C2 & C3 & C4 & C5
+    MEMBER --- D1 & D2 & D3
+    MEMBER --- E1 & E2 & E3 & E4
+
+    %% ==================== RELATIONSHIPS - LEADER ====================
+    LEADER --- F1 & F2 & F3 & F4
+    LEADER --- G1B1 & G1B2 & G1B3 & G1B4
+    LEADER --- H1 & H2 & H3 & H4
+    LEADER --- I1 & I2 & I3
+    LEADER --- J1 & J2
+    LEADER --- K1 & K2
+
+    %% ==================== RELATIONSHIPS - ADMIN ====================
+    ADMIN --- L1 & L2 & L3 & L4
+    ADMIN --- M1 & M2 & M3
+    ADMIN --- N1 & N2 & N3
+    ADMIN --- O1 & O2 & O3
+
+    %% ==================== STYLES ====================
+    style Title fill:#1565C0,stroke:#0D47A1,stroke-width:3,color:#FFFFFF
+
+    style G1 fill:#E3F2FD,stroke:#1976D2,stroke-width:3,color:#1565C0
+    style G1A fill:#FFFFFF,stroke:#1976D2,stroke-width:2
+    style G1B fill:#FFFFFF,stroke:#1976D2,stroke-width:2
+    style G1C fill:#FFFFFF,stroke:#1976D2,stroke-width:2
+    style G1D fill:#FFFFFF,stroke:#1976D2,stroke-width:2
+    style G1E fill:#FCE4EC,stroke:#C2185B,stroke-width:2
+
+    style G2 fill:#E8F5E9,stroke:#388E3C,stroke-width:3,color:#2E7D32
+    style G2A fill:#FFFFFF,stroke:#388E3C,stroke-width:2
+    style G2B fill:#FFFFFF,stroke:#388E3C,stroke-width:2
+    style G2C fill:#FFFFFF,stroke:#388E3C,stroke-width:2
+    style G2D fill:#F3E5F5,stroke:#8E24AA,stroke-width:2
+    style G2E fill:#FFFFFF,stroke:#388E3C,stroke-width:2
+    style G2F fill:#FFFFFF,stroke:#388E3C,stroke-width:2
+
+    style G3 fill:#FFF3E0,stroke:#E65100,stroke-width:3,color:#BF360C
+    style G3A fill:#FFFFFF,stroke:#E65100,stroke-width:2
+    style G3B fill:#FFFFFF,stroke:#E65100,stroke-width:2
+    style G3C fill:#FCE4EC,stroke:#C2185B,stroke-width:2
+    style G3D fill:#FFFFFF,stroke:#E65100,stroke-width:2
+
+    style MEMBER fill:#42A5F5,stroke:#1565C0,stroke-width:3,color:#FFFFFF
+    style LEADER fill:#66BB6A,stroke:#2E7D32,stroke-width:3,color:#FFFFFF
+    style ADMIN fill:#FF7043,stroke:#BF360C,stroke-width:3,color:#FFFFFF

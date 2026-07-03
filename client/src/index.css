@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   THEME TOKENS — Tailwind CSS custom properties
+   Dark is default (:root); .light overrides
+   ============================================= */
+@layer base {
+  :root {
+    --background: 228 32% 7%;
+    --foreground: 220 20% 96%;
+    --card: 230 26% 12%;
+    --card-foreground: 220 20% 96%;
+    --popover: 230 26% 11%;
+    --popover-foreground: 220 20% 96%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 239 84% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 230 22% 15%;
+    --muted-foreground: 225 15% 72%;
+    --accent: 230 22% 18%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 228 20% 22%;
+    --input: 228 20% 22%;
+    --ring: 239 84% 67%;
+    --chart-1: 239 84% 67%;
+    --chart-2: 263 70% 65%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-bg: 230 28% 10%;
+    --sidebar-border: 228 20% 18%;
+    --sidebar-accent: 239 84% 67%;
+    /* Chart colors mapped to emerald family for billiard theme */
+    --chart-emerald: 142.1 76.2% 36.3%;
+    --chart-teal: 160 60% 45%;
+    --chart-amber: 38 92% 50%;
+    --chart-rose: 350 89% 60%;
+    --chart-violet: 263 70% 58%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 142.1 40% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 142.1 40% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 142.1 40% 10%;
+    --primary: 239 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 239 84% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 239 84% 95%;
+    --muted-foreground: 239 84% 40%;
+    --accent: 239 84% 95%;
+    --accent-foreground: 239 84% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 142.1 40% 80%;
+    --input: 142.1 40% 80%;
+    --ring: 239 84% 60%;
+    --chart-1: 239 84% 60%;
+    --chart-2: 263 70% 55%;
+    --chart-3: 30 80% 50%;
+    --chart-4: 280 65% 55%;
+    --chart-5: 340 75% 50%;
+    --sidebar-bg: 239 84% 97%;
+    --sidebar-border: 239 84% 80%;
+    --sidebar-accent: 239 84% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* =============================================
+   THEME TRANSITIONS
+   CRITICAL: background-color transitions are DISABLED
+   on all elements to prevent white flash during
+   dark↔light theme switching.
+   Only color, border, shadow transitions are smooth.
+   ============================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* body: instant bg, smooth text/shadow only */
+  body {
+    transition: color 0.2s ease;
+  }
+
+  /* all children: instant bg/border, smooth text/shadow */
+  body * {
+    transition:
+      color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  /* interactive: also smooth transform/opacity */
+  button,
+  input,
+  textarea,
+  select,
+  a {
+    transition:
+      color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.15s ease,
+      opacity 0.15s ease !important;
+  }
+}
+
+/* =============================================
+   CUSTOM SCROLLBAR
+   ============================================= */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+/* =============================================
+   UTILITIES
+   ============================================= */
+@layer utilities {
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* solid glass panel — no backdrop-blur to prevent white flash */
+  .glass-panel {
+    @apply bg-background;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+    background-size: 200% 200%;
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), 0 0 20px hsl(var(--primary) / 0.15);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply shadow-card-hover -translate-y-0.5;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

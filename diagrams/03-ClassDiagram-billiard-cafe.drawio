@@ -1,0 +1,148 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" version="29.3.2">
+  <diagram name="Class Diagram - Billiard Cafe" id="class-diagram">
+    <mxGraphModel dx="2813" dy="1964" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="class_user" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#90CAF9;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#1565C0;fontSize=12;" value="User" vertex="1">
+          <mxGeometry height="180" width="180" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="class_user_attrs" parent="class_user" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#BBDEFB;collapsible=0;strokeColor=#1565C0;" value="- id: int&#xa;- username: string&#xa;- password_hash: string&#xa;- role: string&#xa;- created_at: datetime" vertex="1">
+          <mxGeometry height="90" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_user_methods" parent="class_user" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#E3F2FD;collapsible=0;strokeColor=#1565C0;" value="+ login(username, password)&#xa;+ logout()&#xa;+ checkRole(): string" vertex="1">
+          <mxGeometry height="60" width="180" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="class_table" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#A5D6A7;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#2E7D32;fontSize=12;" value="BilliardTable" vertex="1">
+          <mxGeometry height="180" width="200" x="290" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="class_table_attrs" parent="class_table" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#C8E6C9;collapsible=0;strokeColor=#2E7D32;" value="- id: int&#xa;- name: string&#xa;- status: string&#xa;- rate_per_hour: decimal&#xa;- current_session_start: datetime&#xa;- reserved_phone: string&#xa;- current_order_id: int&#xa;- drinks_total: decimal&#xa;- billiard_total: decimal" vertex="1">
+          <mxGeometry height="110" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_table_methods" parent="class_table" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#E8F5E9;collapsible=0;strokeColor=#2E7D32;" value="+ startSession()&#xa;+ endSession()&#xa;+ addDrink(product)&#xa;+ checkout(): decimal&#xa;+ getCurrentDuration(): int" vertex="1">
+          <mxGeometry height="40" width="200" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="class_order" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#FFCC80;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#E65100;fontSize=12;" value="Order" vertex="1">
+          <mxGeometry height="200" width="220" x="540" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="class_order_attrs" parent="class_order" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFE0B2;collapsible=0;strokeColor=#E65100;" value="- id: int&#xa;- customer_id: int&#xa;- table_id: int&#xa;- subtotal: decimal&#xa;- discount: decimal&#xa;- tier_discount: decimal&#xa;- voucher_discount: decimal&#xa;- tax: decimal&#xa;- total: decimal&#xa;- status: string&#xa;- payment_method: string&#xa;- created_at: datetime" vertex="1">
+          <mxGeometry height="130" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_order_methods" parent="class_order" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFF3E0;collapsible=0;strokeColor=#E65100;" value="+ calculateTotal()&#xa;+ applyVoucher(voucher)&#xa;+ applyTierDiscount()&#xa;+ addItem(item)&#xa;+ cancel()&#xa;+ complete()" vertex="1">
+          <mxGeometry height="40" width="220" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="class_product" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#CE93D8;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#7B1FA2;fontSize=12;" value="Product" vertex="1">
+          <mxGeometry height="170" width="200" x="-20" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="class_product_attrs" parent="class_product" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#E1BEE7;collapsible=0;strokeColor=#7B1FA2;" value="- id: int&#xa;- category_id: int&#xa;- name: string&#xa;- price: decimal&#xa;- stock: decimal&#xa;- unit: string&#xa;- cost_price: decimal" vertex="1">
+          <mxGeometry height="90" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_product_methods" parent="class_product" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#F3E5F5;collapsible=0;strokeColor=#7B1FA2;" value="+ updateStock(qty)&#xa;+ getProfitMargin(): decimal" vertex="1">
+          <mxGeometry height="50" width="200" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="class_category" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#CE93D8;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#7B1FA2;fontSize=12;" value="Category" vertex="1">
+          <mxGeometry height="100" width="180" x="280" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="class_category_attrs" parent="class_category" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#E1BEE7;collapsible=0;strokeColor=#7B1FA2;" value="- id: int&#xa;- name: string" vertex="1">
+          <mxGeometry height="40" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_category_methods" parent="class_category" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#F3E5F5;collapsible=0;strokeColor=#7B1FA2;" value="+ getProducts(): List&lt;Product&gt;" vertex="1">
+          <mxGeometry height="30" width="180" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="class_customer" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#80DEEA;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#00838F;fontSize=12;" value="Customer" vertex="1">
+          <mxGeometry height="150" width="220" x="250" y="-350" as="geometry" />
+        </mxCell>
+        <mxCell id="class_customer_attrs" parent="class_customer" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#B2EBF2;collapsible=0;strokeColor=#00838F;" value="- id: int&#xa;- name: string&#xa;- phone: string&#xa;- points: int&#xa;- tier: string&#xa;- total_spent: decimal&#xa;- visit_count: int" vertex="1">
+          <mxGeometry height="90" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_customer_methods" parent="class_customer" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#E0F7FA;collapsible=0;strokeColor=#00838F;" value="+ addPoints(points)&#xa;+ redeemPoints(points)&#xa;+ updateTier()&#xa;+ getDiscountRate(): decimal" vertex="1">
+          <mxGeometry height="30" width="220" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="class_voucher" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#FFAB91;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#BF360C;fontSize=12;" value="Voucher" vertex="1">
+          <mxGeometry height="300" width="200" x="860" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="class_voucher_attrs" parent="class_voucher" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFCCBC;collapsible=0;strokeColor=#BF360C;" value="- id: int&#xa;- code: string&#xa;- type: string&#xa;- value: decimal&#xa;- expires_at: datetime&#xa;- min_order: decimal&#xa;- max_uses: int&#xa;- used_count: int" vertex="1">
+          <mxGeometry height="100" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_voucher_methods" parent="class_voucher" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FBE9E7;collapsible=0;strokeColor=#BF360C;" value="+ isValid(): boolean&#xa;+ calculateDiscount(subtotal): decimal&#xa;+ incrementUsage()" vertex="1">
+          <mxGeometry height="30" width="200" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="class_orderitem" parent="class_voucher" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#FFCC80;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#E65100;fontSize=12;" value="OrderItem" vertex="1">
+          <mxGeometry height="140" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="class_orderitem_attrs" parent="class_orderitem" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFE0B2;collapsible=0;strokeColor=#E65100;" value="- id: int&#xa;- order_id: int&#xa;- product_id: int&#xa;- description: string&#xa;- quantity: decimal&#xa;- unit_price: decimal&#xa;- line_total: decimal" vertex="1">
+          <mxGeometry height="90" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_orderitem_methods" parent="class_orderitem" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFF3E0;collapsible=0;strokeColor=#E65100;" value="+ calculateLineTotal()&#xa;+ updateQuantity(qty)" vertex="1">
+          <mxGeometry height="20" width="200" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="class_booking" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#FFF59D;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#F9A825;fontSize=12;" value="Booking" vertex="1">
+          <mxGeometry height="140" width="200" x="20" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="class_booking_attrs" parent="class_booking" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFF9C4;collapsible=0;strokeColor=#F9A825;" value="- id: int&#xa;- customer_name: string&#xa;- phone: string&#xa;- table_id: int&#xa;- start_time: datetime&#xa;- end_time: datetime&#xa;- status: string" vertex="1">
+          <mxGeometry height="80" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_booking_methods" parent="class_booking" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFFDE7;collapsible=0;strokeColor=#F9A825;" value="+ confirm()&#xa;+ cancel()&#xa;+ startSession(): Order" vertex="1">
+          <mxGeometry height="30" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="class_shift" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#B39DDB;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#512DA8;fontSize=12;" value="Shift" vertex="1">
+          <mxGeometry height="180" width="200" x="280" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="class_shift_attrs" parent="class_shift" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#D1C4E9;collapsible=0;strokeColor=#512DA8;" value="- id: int&#xa;- staff_name: string&#xa;- role: string&#xa;- start_time: datetime&#xa;- end_time: datetime" vertex="1">
+          <mxGeometry height="90" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_shift_methods" parent="class_shift" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#EDE7F6;collapsible=0;strokeColor=#512DA8;" value="+ startShift()&#xa;+ endShift()&#xa;+ getDuration(): int" vertex="1">
+          <mxGeometry height="60" width="200" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="class_purchase" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#FFAB91;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#BF360C;fontSize=12;" value="Purchase" vertex="1">
+          <mxGeometry height="110" width="200" x="840" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="class_purchase_attrs" parent="class_purchase" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFCCBC;collapsible=0;strokeColor=#BF360C;" value="- id: int&#xa;- supplier_id: int&#xa;- total: decimal&#xa;- created_at: datetime" vertex="1">
+          <mxGeometry height="50" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_purchase_methods" parent="class_purchase" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FBE9E7;collapsible=0;strokeColor=#BF360C;" value="+ addItem(item)&#xa;+ calculateTotal()&#xa;+ updateStock()" vertex="1">
+          <mxGeometry height="30" width="200" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="class_supplier" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#FFAB91;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#BF360C;fontSize=12;" value="Supplier" vertex="1">
+          <mxGeometry height="110" width="200" x="550" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="class_supplier_attrs" parent="class_supplier" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FFCCBC;collapsible=0;strokeColor=#BF360C;" value="- id: int&#xa;- name: string&#xa;- phone: string&#xa;- address: string" vertex="1">
+          <mxGeometry height="50" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="class_supplier_methods" parent="class_supplier" style="align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1A1A1A;fillColor=#FBE9E7;collapsible=0;strokeColor=#BF360C;" value="+ getPurchases(): List&lt;Purchase&gt;" vertex="1">
+          <mxGeometry height="30" width="200" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_order_items" edge="1" parent="1" source="class_order_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="class_orderitem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_order_items_label" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#333333;" value="1" vertex="1">
+          <mxGeometry height="20" width="20" x="780" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_product_items" edge="1" parent="1" source="class_product_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="class_orderitem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_category_product" edge="1" parent="1" source="class_category_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;exitY=0.5;entryDx=0;entryDy=0;" target="class_product_attrs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_table_order" edge="1" parent="1" source="class_table_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.02;entryY=0.572;entryDx=0;entryDy=0;entryPerimeter=0;" target="class_order_attrs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_customer_order" edge="1" parent="1" source="class_customer_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="class_order_attrs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_table_booking" edge="1" parent="1" source="class_table_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="class_booking_attrs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_supplier_purchase" edge="1" parent="1" source="class_supplier_methods" style="edgeStyle=entityRelationEdgeStyle;fontSize=10;endArrow=ERmany;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="class_purchase_attrs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_order_voucher" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=10;fontColor=#666666;" value="uses" vertex="1">
+          <mxGeometry x="740" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_order_voucher_line" edge="1" parent="1" source="class_order_methods" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#666666;dashed=1;" target="class_voucher_attrs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

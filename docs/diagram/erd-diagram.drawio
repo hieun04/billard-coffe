@@ -1,0 +1,364 @@
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram name="ERD - Billiard Cafe" id="erd-billiard-cafe">
+    <mxGraphModel dx="2601" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="users_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#0D47A1;" value="users" vertex="1">
+          <mxGeometry height="180" width="200" x="-40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="users_pk_col" parent="users_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="users_col1" parent="users_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;username : TEXT UNIQUE NOT NULL" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="users_col2" parent="users_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;password_hash : TEXT NOT NULL" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="users_col3" parent="users_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;full_name : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="users_col4" parent="users_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;phone : TEXT" vertex="1">
+          <mxGeometry height="20" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="users_col5" parent="users_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;role : TEXT DEFAULT &#39;staff&#39;" vertex="1">
+          <mxGeometry height="20" width="200" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;" value="customers" vertex="1">
+          <mxGeometry height="195" width="200" x="-50" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_pk_col" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_col1" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;name : TEXT NOT NULL" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_col2" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;phone : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_col3" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;points : INTEGER DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_col4" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;tier : TEXT DEFAULT &#39;Bronze&#39;" vertex="1">
+          <mxGeometry height="25" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_col5" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;total_spent : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="20" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="customers_col6" parent="customers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;visit_count : INTEGER DEFAULT 0" vertex="1">
+          <mxGeometry height="15" width="200" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#FFF3E0;strokeColor=#E65100;fontColor=#BF360C;" value="tables" vertex="1">
+          <mxGeometry height="220" width="220" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_pk_col" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_col1" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;table_number : TEXT UNIQUE NOT NULL" vertex="1">
+          <mxGeometry height="25" width="220" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_col2" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;status : TEXT DEFAULT &#39;available&#39;" vertex="1">
+          <mxGeometry height="25" width="220" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_col3" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;rate_per_hour : REAL DEFAULT 50000" vertex="1">
+          <mxGeometry height="25" width="220" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_col4" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;current_session_start : TEXT" vertex="1">
+          <mxGeometry height="25" width="220" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_col5" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;current_customer_id : INTEGER FK" vertex="1">
+          <mxGeometry height="25" width="220" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tables_col6" parent="tables_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;drinks_total : INTEGER DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="220" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="categories_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontColor=#4A148C;" value="categories" vertex="1">
+          <mxGeometry height="80" width="180" x="500" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="categories_pk_col" parent="categories_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="categories_col1" parent="categories_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;name : TEXT UNIQUE NOT NULL" vertex="1">
+          <mxGeometry height="25" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="products_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontColor=#4A148C;" value="products" vertex="1">
+          <mxGeometry height="200" width="200" x="490" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="products_pk_col" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="products_col1" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;category_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="products_col2" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;name : TEXT NOT NULL" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="products_col3" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;price : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="products_col4" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;stock : INTEGER DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="products_col5" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;unit : TEXT DEFAULT &#39;phan&#39;" vertex="1">
+          <mxGeometry height="25" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="products_col6" parent="products_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;image_url : TEXT" vertex="1">
+          <mxGeometry height="15" width="200" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#E0F7FA;strokeColor=#00838F;fontColor=#006064;" value="orders" vertex="1">
+          <mxGeometry height="230" width="220" x="250" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_pk_col" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col1" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;table_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="220" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col2" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;customer_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="220" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col3" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;subtotal : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="220" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col4" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;discount : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="220" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col5" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;total : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="220" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col6" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;status : TEXT DEFAULT &#39;pending&#39;" vertex="1">
+          <mxGeometry height="25" width="220" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="orders_col7" parent="orders_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;payment_method : TEXT" vertex="1">
+          <mxGeometry height="25" width="220" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#E0F7FA;strokeColor=#00838F;fontColor=#006064;" value="order_items" vertex="1">
+          <mxGeometry height="170" width="200" x="500" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_pk_col" parent="order_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_col1" parent="order_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;order_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_col2" parent="order_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;product_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_col3" parent="order_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;quantity : INTEGER DEFAULT 1" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_col4" parent="order_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;unit_price : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="order_items_col5" parent="order_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;line_total : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="15" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#FBE9E7;strokeColor=#BF360C;fontColor=#BF360C;" value="bookings" vertex="1">
+          <mxGeometry height="180" width="200" x="20" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_pk_col" parent="bookings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_col1" parent="bookings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;customer_name : TEXT NOT NULL" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_col2" parent="bookings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;phone : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_col3" parent="bookings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;table_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_col4" parent="bookings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;start_time : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="bookings_col5" parent="bookings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;status : TEXT DEFAULT &#39;pending&#39;" vertex="1">
+          <mxGeometry height="25" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#F57F17;" value="vouchers" vertex="1">
+          <mxGeometry height="175" width="200" x="250" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_pk_col" parent="vouchers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_col1" parent="vouchers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;code : TEXT UNIQUE NOT NULL" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_col2" parent="vouchers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;type : TEXT DEFAULT &#39;percent&#39;" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_col3" parent="vouchers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;value : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_col4" parent="vouchers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;expires_at : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="vouchers_col5" parent="vouchers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;tier : TEXT" vertex="1">
+          <mxGeometry height="20" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="suppliers_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#EFEBE9;strokeColor=#5D4037;fontColor=#3E2723;" value="suppliers" vertex="1">
+          <mxGeometry height="130" width="180" x="730" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="suppliers_pk_col" parent="suppliers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="suppliers_col1" parent="suppliers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;name : TEXT UNIQUE NOT NULL" vertex="1">
+          <mxGeometry height="25" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="suppliers_col2" parent="suppliers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;phone : TEXT" vertex="1">
+          <mxGeometry height="25" width="180" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="suppliers_col3" parent="suppliers_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;address : TEXT" vertex="1">
+          <mxGeometry height="25" width="180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="purchases_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#EFEBE9;strokeColor=#5D4037;fontColor=#3E2723;" value="purchases" vertex="1">
+          <mxGeometry height="120" width="180" x="730" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="purchases_pk_col" parent="purchases_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="purchases_col1" parent="purchases_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;supplier_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="purchases_col2" parent="purchases_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;total : REAL DEFAULT 0" vertex="1">
+          <mxGeometry height="25" width="180" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="purchases_col3" parent="purchases_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;notes : TEXT DEFAULT &#39;&#39;" vertex="1">
+          <mxGeometry height="15" width="180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="purchase_items_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#EFEBE9;strokeColor=#5D4037;fontColor=#3E2723;" value="purchase_items" vertex="1">
+          <mxGeometry height="130" width="180" x="930" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="purchase_items_pk_col" parent="purchase_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="purchase_items_col1" parent="purchase_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;purchase_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="purchase_items_col2" parent="purchase_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;product_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="180" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="purchase_items_col3" parent="purchase_items_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;quantity : INTEGER DEFAULT 1" vertex="1">
+          <mxGeometry height="25" width="180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#E1F5FE;strokeColor=#0277BD;fontColor=#01579B;" value="staff_shifts" vertex="1">
+          <mxGeometry height="170" width="200" x="730" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_pk_col" parent="staff_shifts_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_col1" parent="staff_shifts_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="FK&#x9;&#x9;user_id : INTEGER" vertex="1">
+          <mxGeometry height="25" width="200" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_col2" parent="staff_shifts_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;staff_name : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_col3" parent="staff_shifts_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;role : TEXT DEFAULT &#39;staff&#39;" vertex="1">
+          <mxGeometry height="25" width="200" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_col4" parent="staff_shifts_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;shift_name : TEXT" vertex="1">
+          <mxGeometry height="25" width="200" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="staff_shifts_col5" parent="staff_shifts_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;date : TEXT" vertex="1">
+          <mxGeometry height="15" width="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#880E4F;" value="notifications" vertex="1">
+          <mxGeometry height="110" width="180" x="730" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications_pk_col" parent="notifications_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;id : INTEGER" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications_col1" parent="notifications_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;type : TEXT DEFAULT &#39;info&#39;" vertex="1">
+          <mxGeometry height="25" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications_col2" parent="notifications_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;message : TEXT NOT NULL" vertex="1">
+          <mxGeometry height="25" width="180" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications_col3" parent="notifications_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;is_read : INTEGER DEFAULT 0" vertex="1">
+          <mxGeometry height="15" width="180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="settings_pk" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;fillColor=#ECEFF1;strokeColor=#455A64;fontColor=#263238;" value="settings" vertex="1">
+          <mxGeometry height="80" width="160" x="930" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="settings_pk_col" parent="settings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;fontStyle=5" value="PK&#x9;&#x9;key : TEXT" vertex="1">
+          <mxGeometry height="30" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="settings_col1" parent="settings_pk" style="align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0" value="&#x9;&#x9;value : TEXT" vertex="1">
+          <mxGeometry height="25" width="160" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rel1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="340" as="sourcePoint" />
+            <mxPoint x="360" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="340" />
+            </Array>
+            <mxPoint x="250" y="340" as="sourcePoint" />
+            <mxPoint x="150" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00838F;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="440" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00838F;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="445" as="sourcePoint" />
+            <mxPoint x="560" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7B1FA2;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="130" as="sourcePoint" />
+            <mxPoint x="560" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BF360C;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="530" as="sourcePoint" />
+            <mxPoint x="290" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel7" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0277BD;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="400" as="sourcePoint" />
+            <mxPoint x="200" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5D4037;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="240" as="sourcePoint" />
+            <mxPoint x="820" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5D4037;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="250" as="sourcePoint" />
+            <mxPoint x="900" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5D4037;strokeWidth=2;endArrow=classic;endFill=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="280" as="sourcePoint" />
+            <mxPoint x="700" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel11" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=1;endArrow=classic;endFill=1;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="180" />
+            </Array>
+            <mxPoint x="250" y="180" as="sourcePoint" />
+            <mxPoint x="180" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
